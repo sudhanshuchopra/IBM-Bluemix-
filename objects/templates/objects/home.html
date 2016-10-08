@@ -1,0 +1,29 @@
+{% extends 'objects/index.html' %}
+{% block page_title %}Search Images{% endblock %}
+{% block link %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'objects/css/home.css' %}">
+{% endblock link %}
+{% block head %}{% include 'objects/nav.html' %}{% endblock %}
+{% block content %}
+{% load material_form %}
+<div class="row form1">
+     <div class="col s12 m8 l6 offset-m2 offset-l3">
+         <div class="card-panel mycard1 form2">
+                   <h4>Search Images</h4>
+             <form action = "{% url 'home' %}" method='POST' enctype="multipart/form-data">
+                 {% csrf_token %}
+                 {% form form=f %}{% endform %}
+                 <div class="row">
+                     <div class="col s12">
+                         <button type="submit" id ="search-btn" name="search" class="btn waves-effect waves-light left">Search</button>
+                     </div>
+                 </div>
+                 
+               
+             </form>
+
+                    </div>
+     </div>
+ </div>
+ {% endblock %}

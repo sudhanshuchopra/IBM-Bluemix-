@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title> {% block page_title %}{% endblock %} </title>
+        <link rel="stylesheet" href="{% static 'common/font/font-awesome/css/font-awesome.min.css' %}">
+        {% block link %}{% endblock %}
+        {% include 'material/includes/material_css.html' %}
+        {% block extrahead %} {% endblock %}
+    </head>
+    <body>
+        <main class="container">
+            {% block head %}{% endblock%}
+            {% block content %} {% endblock %}
+            
+        </main>
+        <script src="{% static 'common/js/jquery-2.2.1.min.js' %}"></script>
+        {% include 'material/includes/material_js.html' %}
+        {% block scripts %} {% endblock %}
+    </body>
+</html>
